@@ -1,9 +1,9 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { FiDroplet, FiWind, FiSunrise, FiSunset, FiThermometer, FiMapPin } from "react-icons/fi";
+import { motion } from "framer-motion";
+import { FiWind, FiSunrise, FiSunset, FiThermometer, FiMapPin } from "react-icons/fi";
 import { WiHumidity, WiBarometer } from "react-icons/wi";
-import { TbUvIndex } from "react-icons/tb";
+import Image from "next/image";
 
 interface WeatherData {
   city: string;
@@ -109,9 +109,11 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ data }) => {
             className="mt-6 flex items-center justify-between"
           >
             <div className="flex items-center">
-              <img 
+              <Image 
                 src={`https://openweathermap.org/img/wn/${data.icon}@2x.png`} 
                 alt={data.description}
+                width={64}
+                height={64}
                 className="w-16 h-16 mr-2 drop-shadow-lg"
               />
               <div>
